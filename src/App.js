@@ -4,11 +4,12 @@ import useFetch from "./hook/useFetch";
 import Main from "./Main";
 
 function App() {
-  const { loading, error, data, totalCount, fetchData } = useFetch();
+  const { loading,  hasMore, data,  fetchMore } = useFetch();
+
+
   return (
     <div className="App">
-      <button onClick={fetchData}>Click</button>
-      <Main/>
+      <Main data={data} loading={loading} hasMore={hasMore} fetchMore={fetchMore}/>
     </div>
   );
 }

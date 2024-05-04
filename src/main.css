@@ -1,0 +1,12 @@
+.main{
+    border:2px solid red;
+    padding:30px 100px;
+}
+
+.body{
+    border:2px solid red;
+    display:flex;
+    flex-wrap:wrap;
+    gap:50px;
+    justify-content:center;
+}
