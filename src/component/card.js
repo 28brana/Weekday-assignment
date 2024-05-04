@@ -58,7 +58,7 @@ const Card = ({
       </div>
       <div className="card-bottom">
         <p className="p1">Minium Experience</p>
-        <p className="p2">{minExp} Years</p>
+        <p className="p2">{minExp ? `${minExp} Years` :'Not Defined'}</p>
         <a href={jdLink}> ⚡ Easy Apply</a>
       </div>
     </div>

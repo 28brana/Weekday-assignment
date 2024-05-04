@@ -1,6 +1,8 @@
-import { useCallback, useRef } from "react";
+import { useCallback, useRef, useState } from "react";
 import Card from "./component/card";
 import './main.css'
+import Filter from "./component/filter";
+
 const Main = ({ loading, hasMore, data = [], fetchMore }) => {
 
     const observer = useRef()
@@ -16,11 +18,28 @@ const Main = ({ loading, hasMore, data = [], fetchMore }) => {
         if (node) observer.current.observe(node)
     }, [loading, hasMore, fetchMore])
 
+    const [filter, setFilter] = useState({
+        minExp: null,
+        location: null
+    })
+
+    function filterData(data) {
+        return data.filter(item => {
+            const matchesMinExp = filter.minExp ? item.minExp >= filter.minExp : true;
+            return matchesMinExp;
+        });
+    }
+
+    const filteredData = filterData(data) || [];
+
     return (
         <div className="main">
+            <div className="header">
+                <Filter setFilter={setFilter} />
+            </div>
             <div className="body">
                 {
-                    data.map((item, index) => (
+                    filteredData.map((item, index) => (
                         <Card {...item} key={index} />
                     ))
                 }

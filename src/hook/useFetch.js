@@ -25,7 +25,7 @@ const useFetch = () => {
 
                 const response = await axios.post(url, {
                     offset,
-                    limit: 1
+                    limit: 10
                 }, { headers });
 
                 setData((prevData) => [...prevData, ...response.data.jdList]);
@@ -39,10 +39,10 @@ const useFetch = () => {
         };
         fetchData();
     }, [offset]);
-    
+
     const hasMore = data.length < totalCount;
 
-    return { loading, error, data, totalCount, hasMore,fetchMore };
+    return { loading, error, data, totalCount, hasMore, fetchMore };
 };
 
 export default useFetch;
