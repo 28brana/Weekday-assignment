@@ -17,11 +17,41 @@ const Filter = ({ setFilter }) => {
 
     const jobLocationOptions = [
         { value: 'Remote', label: 'Remote' },
-        { value: '1', label: '1' },
-        { value: '1', label: '1' },
-
+        { value: 'office', label: 'In-office' },
     ]
 
+    const minPayOptions = [
+        { value: 0, label: '0L' },
+        { value: 10, label: '10L' },
+        { value: 20, label: '20L' },
+        { value: 30, label: '30L' },
+        { value: 40, label: '40L' },
+        { value: 50, label: '50L' },
+        { value: 60, label: '60L' },
+        { value: 70, label: '70L' },
+    ]
+
+    const locationOptions = [
+        { value: 0, label: '0L' },
+        { value: 10, label: '10L' },
+        { value: 20, label: '20L' },
+        { value: 30, label: '30L' },
+        { value: 40, label: '40L' },
+        { value: 50, label: '50L' },
+        { value: 60, label: '60L' },
+        { value: 70, label: '70L' },
+    ]
+
+    const roleOptions = [
+        { value: 0, label: '0L' },
+        { value: 10, label: '10L' },
+        { value: 20, label: '20L' },
+        { value: 30, label: '30L' },
+        { value: 40, label: '40L' },
+        { value: 50, label: '50L' },
+        { value: 60, label: '60L' },
+        { value: 70, label: '70L' },
+    ]
     const handleChange = (key, value) => {
         setFilter((prev) => {
             return {
@@ -33,11 +63,26 @@ const Filter = ({ setFilter }) => {
 
     return (
         <div className='filter-container'>
+            <input className='search' type='text' placeholder='Search Company Name' onChange={(val) => {
+                handleChange('search', val.target.value)
+            }}/>
             <Select options={ExperienceOptions} placeholder='Min. Experience' onChange={(val) => {
                 handleChange('minExp', val.value)
             }} />
-            <Select options={jobLocationOptions} placeholder='Remote' />
+            <Select options={jobLocationOptions} placeholder='Job Mode' onChange={(val) => {
+                handleChange('mode', val.value)
+            }} />
+            <Select options={minPayOptions} placeholder='Minimum Base Pay Salary' onChange={(val) => {
+                handleChange('minPay', val.value)
+            }} />
+            <Select options={locationOptions} placeholder='Location' onChange={(val) => {
+                handleChange('location', val.value)
+            }} />
+            <Select options={roleOptions} placeholder='Role' onChange={(val) => {
+                handleChange('role', val.value)
+            }} />
 
+            
         </div>
     )
 }

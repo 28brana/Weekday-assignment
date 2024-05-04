@@ -1,4 +1,30 @@
 .filter-container{
     display:flex;
-    
+    gap: 16px;
+    flex-wrap:wrap;
+}
+
+.search{
+    border-radius: 4px;
+    padding: 0px 12px;
+    color: hsl(0, 0%, 20%);
+    font-size:16px;
+    height:38px;
+    border:1px solid hsl(0, 0%, 80%);
+    outline-color:#215bfb;
+    font-weight:500;
+}
+
+.clear-btn{
+    padding:8px 12px;
+    color:white;
+    background:#215bfb; 
+    border-radius:4px;
+    cursor:pointer;
+    border:none;
+    font-weight:600;
+}
+
+.clear-btn:hover{
+    background:#1641ba;
 }

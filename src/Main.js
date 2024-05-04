@@ -20,13 +20,21 @@ const Main = ({ loading, hasMore, data = [], fetchMore }) => {
 
     const [filter, setFilter] = useState({
         minExp: null,
-        location: null
+        mode: null,
+        minPay:null,
+        search:'',
+        location:null,
+        role:null
     })
 
     function filterData(data) {
         return data.filter(item => {
             const matchesMinExp = filter.minExp ? item.minExp >= filter.minExp : true;
-            return matchesMinExp;
+            const matchesJobMode = filter.mode ==='Remote' ? item.location === 'remote' : true;
+            const matchesMinPay = filter.minPay >=0 ? item.minJdSalary >= filter.minPay: true;
+            const matchesSearch = filter.search ? item.companyName.toLowerCase().includes(filter.search.toLowerCase()) : true;
+
+            return matchesMinExp && matchesJobMode && matchesMinPay && matchesSearch;
         });
     }
 
@@ -35,7 +43,7 @@ const Main = ({ loading, hasMore, data = [], fetchMore }) => {
     return (
         <div className="main">
             <div className="header">
-                <Filter setFilter={setFilter} />
+                <Filter setFilter={setFilter}/>
             </div>
             <div className="body">
                 {
