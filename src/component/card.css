@@ -1,0 +1,122 @@
+.card-container {
+  max-width: 360px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 1px 4px 0px;
+  border-radius: 20px;
+  padding: 16px;
+}
+
+.card-header {
+  display: flex;
+  align-item: center;
+  gap: 10px;
+}
+
+.card-header .logo {
+  display: flex;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.card-header .card-header-detail .p1 {
+  font-size: 13px;
+  font-weight: 600;
+  color: #8b8b8b;
+}
+.card-header .card-header-detail .p2 {
+  font-size: 14px;
+  font-weight: 400;
+  color: #2f2f2f;
+}
+.card-header .card-header-detail .p3 {
+  font-size: 11px;
+  font-weight: 500;
+  color: #2f2f2f;
+}
+
+.card-salary {
+  margin-top: 12px;
+  font-size: 14px;
+  font-weight: 400;
+  color: rgb(77, 89, 106);
+}
+
+.card-about {
+  margin-top: 12px;
+  /* border: 2px solid red; */
+}
+
+.card-about .title {
+  font-size: 16px;
+  font-weight: 500;
+  color: #2f2f2f;
+}
+
+.card-about .description {
+  color: #2f2f2f;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.card-about .toggle-btn-container {
+  display: flex;
+  align-item: center;
+  justify-content: center;
+  /* border: 2px solid red; */
+  position: relative;
+}
+
+.show::before {
+  content: "";
+  position: absolute;
+  width: 101%;
+  background: linear-gradient(0deg, white, transparent);
+  bottom: 20px;
+  height: 70px;
+  
+}
+.card-about .toggle-btn {
+  color: #4943da;
+  font-size: 14px;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.card-bottom{
+    margin-top:16px;
+}
+
+.card-bottom .p1{
+    font-size: 13px;
+    font-weight: 600;
+    color: #8b8b8b;
+}
+
+.card-bottom .p2{
+    font-size: 14px;
+    font-weight: 400;
+    color: #2f2f2f;
+    margin-top:2px;
+}
+
+.card-bottom a{
+    background-color: rgb(85, 239, 196);
+    width:100%;
+    display:inline-block;
+    color: #2f2f2f;
+    padding:8px 10px;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:500;
+    font-size:16px;
+    text-align:center;
+    text-decoration:none;
+    margin-top:16px;
+    transition:all 150ms ease;
+}
+
+.card-bottom a:hover{
+    background-color: rgb(73 175 147);
+
+}
