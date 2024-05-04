@@ -21,10 +21,13 @@ const Main = ({ loading, hasMore, data = [], fetchMore }) => {
             <div className="body">
                 {
                     data.map((item, index) => (
-                        <Card  key={index} />
+                        <Card {...item} key={index} />
                     ))
                 }
             </div>
+            {hasMore && <div className="loading">
+                🔃 Loading ...
+            </div>}
             <div ref={lastBookElementRef} />
         </div>
     )
