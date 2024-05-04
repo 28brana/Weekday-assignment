@@ -1,7 +1,11 @@
 import './filter.css';
 import Select from 'react-select'
 
-const Filter = ({ setFilter }) => {
+const Filter = ({ setFilter ,locationArr,roleArr}) => {
+    console.log({
+        locationArr,
+        roleArr
+    })
     const ExperienceOptions = [
         { value: '1', label: '1 Year' },
         { value: '2', label: '2 Year' },
@@ -31,27 +35,19 @@ const Filter = ({ setFilter }) => {
         { value: 70, label: '70L' },
     ]
 
-    const locationOptions = [
-        { value: 0, label: '0L' },
-        { value: 10, label: '10L' },
-        { value: 20, label: '20L' },
-        { value: 30, label: '30L' },
-        { value: 40, label: '40L' },
-        { value: 50, label: '50L' },
-        { value: 60, label: '60L' },
-        { value: 70, label: '70L' },
-    ]
+    const locationOptions = locationArr.map((val)=>{
+        return {
+            value:val,
+            label:val
+        }
+    })
 
-    const roleOptions = [
-        { value: 0, label: '0L' },
-        { value: 10, label: '10L' },
-        { value: 20, label: '20L' },
-        { value: 30, label: '30L' },
-        { value: 40, label: '40L' },
-        { value: 50, label: '50L' },
-        { value: 60, label: '60L' },
-        { value: 70, label: '70L' },
-    ]
+    const roleOptions = roleArr.map((val)=>{
+        return {
+            value:val,
+            label:val
+        }
+    })
     const handleChange = (key, value) => {
         setFilter((prev) => {
             return {
